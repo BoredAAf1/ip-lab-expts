@@ -1,5 +1,14 @@
 import numpy as np
 
+def dft(x):
+    x = np.asarray(x, dtype=complex)
+    N = len(x)
+    n = np.arange(N)            # row vector (1, n)
+    k = n.reshape((N, 1))       # col vector (n , 1)
+
+    W = np.exp(-2j * np.pi * k * n / N)
+    return W @ x 
+
 def fft(x):
     if len(x) == 1:
         return x
