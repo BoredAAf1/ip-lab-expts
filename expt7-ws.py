@@ -61,4 +61,27 @@ for y in range(labels.shape[0]):
     
 Image.fromarray(result_image, "RGB").show()
 
+# if want boundary
+# overlay = np.zeros((H, W, 3), dtype=np.uint8)
+
+# for y in range(H):
+#     for x in range(W):
+#         is_boundary = False
+#         current = labels[y, x]
+
+#         for dy, dx in [(0,1),(0,-1),(1,0),(-1,0)]:
+#             ny, nx = y + dy, x + dx
+#             if 0 <= ny < H and 0 <= nx < W:
+#                 if labels[ny, nx] != current:
+#                     is_boundary = True
+#                     break
+
+#         if is_boundary:
+#             overlay[y, x] = (255, 0, 0)      
+#         else:
+#             v = img_arr[y, x]
+#             overlay[y, x] = (v, v, v)        
+
+# Image.fromarray(overlay, "RGB").show()
+
         
